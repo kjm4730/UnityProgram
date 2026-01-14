@@ -15,6 +15,8 @@ public class Berrion : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.State == false) return;
+
         float time = Mathf.PingPong(Time.time * speed, 1f);
 
         transform.localPosition = initializePosition + direction.normalized * distance *time;
