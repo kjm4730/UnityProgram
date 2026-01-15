@@ -15,7 +15,7 @@ public class Fuzzbit : MonoBehaviour
     }
     void Update()
     {
-        if (GameManager.instance.State == false) return;
+        if (GameManager.Instance.State == false) return;
 
         float time = Mathf.PingPong(Time.time * speed, 1f);
 

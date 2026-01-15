@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
 
     public bool State {  get { return state; } }
 
-    public static GameManager instance;
-
+    [SerializeField] static GameManager instance;
+    
     public static GameManager Instance
     {
         get
@@ -16,7 +16,15 @@ public class GameManager : MonoBehaviour
             if(instance == null)
             {
                 instance = FindObjectOfType<GameManager>();
+
+                if(instance == null )
+                {
+                    GameObject clone = new GameObject(nameof(GameManager));
+
+                    instance = clone.AddComponent<GameManager>();
+                }
             }
+
 
             return instance;
         }
@@ -39,5 +47,13 @@ public class GameManager : MonoBehaviour
     public void Pause()
     {
         state = false;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Pause();
+        }
     }
 }

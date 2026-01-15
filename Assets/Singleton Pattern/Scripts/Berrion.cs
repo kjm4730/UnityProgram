@@ -15,7 +15,7 @@ public class Berrion : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.State == false) return;
+        if (GameManager.Instance.State == false) return;
 
         float time = Mathf.PingPong(Time.time * speed, 1f);
 
