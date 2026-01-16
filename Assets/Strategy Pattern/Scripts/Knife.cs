@@ -3,8 +3,15 @@ using UnityEngine;
 
 public class Knife : Weapon
 {
+    [SerializeField] Animator animator;
+
+    public void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     public override void Attack()
     {
-        Debug.Log("Knife");
+        animator.Play("Attack");
     }
 }
