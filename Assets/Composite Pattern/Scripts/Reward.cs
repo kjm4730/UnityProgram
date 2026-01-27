@@ -4,10 +4,9 @@ using UnityEngine.UI;
 public class Reward : MonoBehaviour
 {
     [SerializeField] int random;
-    [SerializeField] Item [ ] dataList;
+    [SerializeField] Data [ ] dataList;
 
     [SerializeField] Image image;
-    [SerializeField] Sprite sprite;
     private void Awake()
     {
         image = GetComponent<Image>();
@@ -18,6 +17,6 @@ public class Reward : MonoBehaviour
         random = Random.Range(0, dataList.Length);
 
         gameObject.name = dataList[random].Name;
-        image.sprite = sprite;
+        image.sprite = dataList[random].GetSprite;
     }
 }

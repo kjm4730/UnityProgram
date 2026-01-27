@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class Item
+public class Data
 {
     [SerializeField] string name;
     [SerializeField] Sprite sprite;
