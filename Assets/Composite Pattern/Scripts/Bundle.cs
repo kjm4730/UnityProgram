@@ -1,16 +1,22 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Bundle : MonoBehaviour
+public class Bundle : MonoBehaviour , IRewardable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] List<IRewardable> list = new List<IRewardable>();
+
+    public void Add(IRewardable reward)
     {
-        
+        list.Add(reward);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void Receive()
     {
-        
+        foreach (IRewardable reward in list)
+        {
+            reward.Receive();
+        }
+
     }
 }
