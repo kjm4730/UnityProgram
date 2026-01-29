@@ -4,7 +4,7 @@ using UnityEngine;
 public class Greanade : Weapon
 {
     [SerializeField] float throwPower;
-    [SerializeField] Rigidbody rigidbody;
+    [SerializeField] new Rigidbody rigidbody;
     [SerializeField] Vector3 direction;
     [SerializeField] Vector3 startPosition;
 
