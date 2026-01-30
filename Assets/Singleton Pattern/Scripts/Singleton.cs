@@ -9,7 +9,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         {
             if (instance == null)
             {
-                instance = (T)FindObjectOfType(typeof(T));
+                instance = FindAnyObjectByType<T>();
 
                 if (instance == null)
                 {
