@@ -1,21 +1,27 @@
+using System;
 using UnityEngine;
 
 public class Notification : MonoBehaviour
 {
     private void OnEnable()
     {
-       // QuestManager.OnQuestCompleted += ShowDetailsOptions;
+      //  QuestManager.onQuestCompleted += Show();
     }
 
     private void OnDisable()
     {
-       // QuestManager.OnQuestCompleted -= Show();
+        QuestManager.onQuestCompleted -= Show();
     }
 
-    //public void Show(Quest quest)
-   // {
-       // Debug.Log("Quest Name : " + quest.title + " Clear");
-   // }
+    private Action<Quest> Show()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Show(Quest quest)
+    {
+        Debug.Log("Quest Name : " + quest.Title + " Clear");
+    }
 
 
 }
