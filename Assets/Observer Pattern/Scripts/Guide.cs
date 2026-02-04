@@ -1,11 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Guide : MonoBehaviour
 {
     [SerializeField] Quest quest;
+    [SerializeField] Canvas questCanvas;
+
+    private void Awake()
+    {
+        questCanvas = transform.GetChild(0).GetComponent<Canvas>();
+    }
 
     public void Accept()
     {
-        Debug.Log("Quest Content");
+        QuestManager.Instance.Accept(quest);
+
+        questCanvas.gameObject.SetActive(false);
     }
 }
